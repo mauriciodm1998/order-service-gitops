@@ -3,9 +3,11 @@ data:
   config.yaml: |
     server:
       port: 3010
-      paymentIntegrationHost: payment-service.fiap.svc.cluster.local:3011/
+      paymentIntegrationHost: http://payment-service.fiap.svc.cluster.local:3011
     db:
       connectionString: mongodb://root:password@order-db.fiap.svc.cluster.local:27017/
+    token:
+      key: "dnVJWGFPSzRPcEpXQTl5U1gxVVRwSVdzaFhQcFA2bmVHS0dBNzI0RmF1WQ=="
 kind: ConfigMap
 metadata:
   labels:
