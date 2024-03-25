@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+namespace: hackaton
+
+configMapGenerator:
+- files:
+  - config.yaml
+  name: configmap
+  behavior: merge
+
+patches: 
+# - patch: |-
+#     - op: replace
+#       path: /spec/ports/0/port
+#       value: 8081
+#   target:
+#     kind: Service
+
+- patch: |-
+    - op: add
+      path: /spec/template/spec/containers/0/envFrom
+      value:
+        - secretRef:
+            name: order-service-secret
+  target:
+    kind: Deployment
+    
+images:
+- name: image
+  newName: docker.io/mauricio1998/order-service

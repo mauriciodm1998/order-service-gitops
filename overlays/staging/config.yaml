@@ -1,0 +1,5 @@
+server:
+  port: 3010
+  paymentIntegrationHost: payment-service.fiap.svc.cluster.local:3011/
+db:
+  connectionString: mongodb://root:password@order-db.fiap.svc.cluster.local:27017/
