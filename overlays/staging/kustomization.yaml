@@ -13,13 +13,6 @@ configMapGenerator:
   behavior: merge
 
 patches: 
-# - patch: |-
-#     - op: replace
-#       path: /spec/ports/0/port
-#       value: 8081
-#   target:
-#     kind: Service
-
 - patch: |-
     - op: add
       path: /spec/template/spec/containers/0/envFrom
