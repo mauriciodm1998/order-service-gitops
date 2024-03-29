@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  product_integration: product-service-service:50051
+sqs:
+  order_queue: https://sqs.us-east-1.amazonaws.com/851725660206/order
+  payment_cancelled_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentcancelled
+  payment_payed_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentpayed
+  payment_pending_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentpending
+  region: us-east-1
